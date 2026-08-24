@@ -1,0 +1,40 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  // background-image: url("/images/background.avif");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.container {
+  padding: 10px;
+  flex: 1;
+  padding-right: 15px;
+  padding-left: 15px;
+}
