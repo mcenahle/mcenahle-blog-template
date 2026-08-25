@@ -46,3 +46,48 @@ body::before {
 footer {
   font-size: 12px;
 }
+
+code {
+  font-family: "JetBrainsMono-Regular";
+}
+
+@font-face {
+  font-family: "JetBrainsMono-Regular";
+  src: url("https://mcenahle.com/fonts/JetBrainsMono-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > .active > a:hover {
+  color: #337ab7;
+}
+
+.dropdown-menu > li > a:focus,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: #337ab7;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+    color: #337ab7;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-color: #337ab7;
+    color: white;
+  }
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.page-header {
+  margin-top: 0;
+}
