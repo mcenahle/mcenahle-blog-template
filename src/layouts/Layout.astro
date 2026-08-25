@@ -1,6 +1,7 @@
 ---
 import "../styles/global.scss";
 import Footer from "../components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -23,9 +24,9 @@ import Footer from "../components/Footer.astro";
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
+    <ClientRouter />
   </head>
   <body>
     <slot />
-  </body>
-  <Footer />
+  </body><Footer />
 </html>
