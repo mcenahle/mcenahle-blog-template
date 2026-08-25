@@ -111,6 +111,18 @@ a:focus {
   text-decoration: none;
 }
 
+.btn-golden,
+.btn-golden:focus {
+  background: #e4c995;
+  background: linear-gradient(to right, #e4c995, #b9916a);
+  color: #fff;
+  border: 1px solid #caa77b;
+  &:hover {
+    background: #b9916a;
+    color: #fff;
+  }
+}
+
 .page-header {
   margin-top: 0;
 }
