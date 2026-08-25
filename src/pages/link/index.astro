@@ -1,0 +1,111 @@
+---
+import Navbar from "../../components/Navbar.astro";
+import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Navbar />
+
+<Layout title="友情链接">
+  <div class="container">
+    <h2>友情链接</h2>
+
+    <p>本网站的相关信息如下：</p>
+
+    <h4>（一）Butterfly 复制版</h4>
+
+    <!-- <pre>
+name: 梅之夏
+link: https://blog.mcenahle.page/
+avatar: https://blog.mcenahle.page/img/icon.png
+descr: Explore. Dream. Discover.</pre> -->
+
+    <code>name: 梅之夏</code>
+    <br />
+    <code>link: https://blog.mcenahle.page/</code>
+    <br />
+    <code>avatar: https://blog.mcenahle.page/img/icon.png</code>
+    <br />
+    <code>descr: Explore. Dream. Discover.</code>
+
+    <h4>（二）明文版本</h4>
+
+    <ul>
+      <li>名字：梅之夏</li>
+      <li>链接：https://blog.mcenahle.page/</li>
+      <li>徽标：https://blog.mcenahle.page/img/icon.png</li>
+      <li>描述：Explore. Dream. Discover.</li>
+    </ul>
+
+    <div class="alert alert-info">
+      <b><Icon name="mdi:link-plus" /> 想要将你的网站添加到全站页脚吗？</b>
+      <hr />
+      <p>你可以通过以下方式申请友链：</p>
+
+      <p>
+        P.S.
+        如果是医学生、护理学生或其他与临床医疗相关领域的博客网站，将优先收录至“推荐链接”分类中。
+      </p>
+
+      <p>
+        <b>前置条件：</b>
+        <ul>
+          <li>贵站已经建站3个月；</li>
+          <li>
+            至少有5篇原创“手搓”文章（可以使用AI进行部分操作，如润色等，但不能大规模的AI生成）；
+          </li>
+          <li>不接受违法违规内容的网站；</li>
+          <li>网站需启用 HTTPS。</li>
+        </ul>
+      </p>
+
+      <p>
+        <b>方法1【推荐】：</b
+        >在评论区评论，附上你的网站名称、URL、图像链接和描述。例如：<i
+          >（此方法的等待时长预计为1-3天）</i
+        >
+      </p>
+
+      <!-- <pre>
+name: Website Name
+link: https://example.com/
+avatar: https://example.com/path/to/file.png
+descr: Website Description</pre> -->
+
+      <code>name: Website Name</code>
+      <br />
+      <code>link: https://example.com/</code>
+      <br />
+      <code>avatar: https://example.com/path/to/file.png</code>
+      <br />
+      <code>descr: Website Description</code>
+
+      <p>
+        <b>方法2：</b>填写下方的表单。<i>（此方法的等待时长预计为3小时-1天）</i>
+      </p>
+
+      <a
+        href="https://tally.so/r/dWGbNz"
+        target="_blank"
+        class="btn btn-primary btn-block"
+        role="button">点击以填写 <Icon name="mdi:open-in-new" /></a
+      >
+
+      <p>
+        <b>方法3：</b>在本网站的 <a
+          href="https://github.com/mcenahle/mcenahle-blog-template/blob/main/src/components/Footer.astro"
+          target="_blank"
+          ><u>友情链接管理配置文件</u> <Icon name="mdi:open-in-new" /></a
+        > 中，提交一个 Pull Request（PR），并等待我手动 merge。<i
+          >（此方法的等待时长预计为3小时-1天）</i
+        >
+      </p>
+      <a
+        href="https://github.com/mcenahle/mcenahle-blog-template/edit/main/src/components/Footer.astro"
+        target="_blank"
+        class="btn btn-primary btn-block"
+        role="button">立即开始 <Icon name="mdi:open-in-new" /></a
+      >
+    </div>
+  </div>
+</Layout>
