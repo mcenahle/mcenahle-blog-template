@@ -117,8 +117,32 @@ a:focus {
   line-height: 2em;
 }
 
+.tk-icon.__comments {
+  height: 14px;
+  width: 14px;
+}
+
 @media (max-width: 576px) {
-  .tcomment {
-    max-width: 400px !important;
+  .twikoo {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  .tk-row.actions,
+  .tk-comments-container {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  input[type="file"] {
+    display: block;
+    width: 180px;
   }
 }
