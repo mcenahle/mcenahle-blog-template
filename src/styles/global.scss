@@ -45,6 +45,24 @@ body::before {
 
 footer {
   font-size: 12px;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  color: #000000;
+  background: linear-gradient(
+    rgb(250 233 158 / 4%),
+    rgb(157 126 59 / 35%) 45%,
+    rgb(143 128 52 / 57%) 100%
+  );
+}
+
+.text-rightWord {
+  margin-top: 55px;
+}
+
+@media (max-width: 767px) {
+  .text-rightWord {
+    margin-top: 0px;
+  }
 }
 
 code {
