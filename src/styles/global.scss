@@ -116,3 +116,9 @@ a:focus {
   text-indent: 2em;
   line-height: 2em;
 }
+
+@media (max-width: 576px) {
+  .tcomment {
+    max-width: 400px !important;
+  }
+}
