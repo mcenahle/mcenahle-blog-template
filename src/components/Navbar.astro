@@ -32,10 +32,18 @@ import Search from "../components/Search.astro";
             ><Icon name="mdi:post-it-note-check-outline" /> 博客评论区图片存储说明</a
           >
         </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="#" data-toggle="modal" data-target="#searchModal"
-            ><Icon name="mdi:search" /> 全站搜索</a
+          <button
+            type="button"
+            class="btn btn-primary navbar-btn"
+            style="margin-left: 12px; margin-right: 12px; width: 120px"
+            data-toggle="modal"
+            data-target="#searchModal"
           >
+            <Icon name="mdi:search" /> 全站搜索
+          </button>
         </li>
       </ul>
     </div>
