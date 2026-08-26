@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import type Index from "../pages/link/index.astro";
 import Layout from "./Layout.astro";
 import { Icon } from "astro-icon/components";
 
@@ -12,7 +13,7 @@ interface Props {
     name: string;
     date: string;
     note: string;
-  };
+  }[];
   originalLink: string;
 }
 
@@ -52,63 +53,70 @@ const {
           <div class="article">
             <slot />
           </div>
-          <p>
-            <small
-              >{
-                location && (
-                  <>
+          {
+            location && (
+              <>
+                <p>
+                  <small>
+                    <Icon name="mdi:map-marker-radius-outline" />{" "}
+                    在撰写本文（或之前），作者去过了：
+                  </small>
+                  {location.map((place, index) => (
                     <button
                       type="button"
                       class="btn btn-info btn-sm"
                       data-toggle="modal"
-                      data-target="#placeModal"
+                      data-target={`#placeModal-${index}`}
+                      style="margin-left: 6px;"
                     >
-                      📍 {location.name}
+                      📍 {place.name}
                     </button>
-                    <div
-                      class="modal fade"
-                      id="placeModal"
-                      tabindex="-1"
-                      role="dialog"
-                      aria-labelledby="placeModalLabel"
-                      aria-hidden="true"
-                    >
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button
-                              type="button"
-                              class="close"
-                              data-dismiss="modal"
-                              aria-hidden="true"
-                            >
-                              &times;
-                            </button>
-                            <h4 class="modal-title" id="placeModalLabel">
-                              {location.name}
-                            </h4>
-                          </div>
-                          <div class="modal-body">
-                            <p>{location.date}</p>
-                            <p>{location.note}</p>
-                          </div>
-                          <div class="modal-footer">
-                            <button
-                              type="button"
-                              class="btn btn-default"
-                              data-dismiss="modal"
-                            >
-                              关闭
-                            </button>
-                          </div>
+                  ))}
+                </p>
+                {location.map((place, index) => (
+                  <div
+                    class="modal fade"
+                    id={`placeModal-${index}`}
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="placeModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-hidden="true"
+                          >
+                            &times;
+                          </button>
+                          <h4 class="modal-title" id="placeModalLabel">
+                            {place.name}
+                          </h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>{place.date}</p>
+                          <p>{place.note}</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn btn-default"
+                            data-dismiss="modal"
+                          >
+                            关闭
+                          </button>
                         </div>
                       </div>
                     </div>
-                  </>
-                )
-              }</small
-            >
-          </p>
+                  </div>
+                ))}
+              </>
+            )
+          }
           <hr style="margin-top: 24px;" />
           <a class="btn btn-primary" href="/" role="button"
             ><Icon name="mdi:arrow-left" /> 返回</a
