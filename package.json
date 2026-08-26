@@ -1,7 +1,9 @@
 {
   "name": "natsume",
   "type": "module",
+  "description": "An Astro blog theme.",
   "version": "0.0.1",
+  "license": "MIT",
   "engines": {
     "node": ">=22.12.0"
   },
