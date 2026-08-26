@@ -8,10 +8,22 @@ interface Props {
   pubDate: string;
   slug: string;
   description: string;
+  location?: {
+    name: string;
+    date: string;
+    note: string;
+  };
   originalLink: string;
 }
 
-const { title, pubDate, slug, description, originalLink = "" } = Astro.props;
+const {
+  title,
+  pubDate,
+  slug,
+  description,
+  location,
+  originalLink = "",
+} = Astro.props;
 ---
 
 <Navbar />
@@ -40,6 +52,63 @@ const { title, pubDate, slug, description, originalLink = "" } = Astro.props;
           <div class="article">
             <slot />
           </div>
+          <p>
+            <small
+              >{
+                location && (
+                  <>
+                    <button
+                      type="button"
+                      class="btn btn-info btn-sm"
+                      data-toggle="modal"
+                      data-target="#placeModal"
+                    >
+                      📍 {location.name}
+                    </button>
+                    <div
+                      class="modal fade"
+                      id="placeModal"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="placeModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button
+                              type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-hidden="true"
+                            >
+                              &times;
+                            </button>
+                            <h4 class="modal-title" id="placeModalLabel">
+                              {location.name}
+                            </h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>{location.date}</p>
+                            <p>{location.note}</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-default"
+                              data-dismiss="modal"
+                            >
+                              关闭
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                )
+              }</small
+            >
+          </p>
           <hr style="margin-top: 24px;" />
           <a class="btn btn-primary" href="/" role="button"
             ><Icon name="mdi:arrow-left" /> 返回</a
