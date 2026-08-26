@@ -1,0 +1,43 @@
+---
+import BlogLayout from "../../../../layouts/BlogLayout.astro";
+
+const posts = import.meta.glob("../../../../posts/*.astro", {
+  eager: true,
+});
+
+export function getStaticPaths() {
+  const posts = import.meta.glob("../../../../posts/*.astro", {
+    eager: true,
+  });
+
+  return Object.values(posts).map((post: any) => {
+    const [year, month, day] = post.pubDate.split("-");
+
+    return {
+      params: {
+        year,
+        month,
+        day,
+        slug: post.slug,
+      },
+      props: {
+        post,
+      },
+    };
+  });
+}
+
+const { post } = Astro.props;
+
+const Content = post.default;
+---
+
+<BlogLayout
+  title={post.title}
+  pubDate={post.pubDate}
+  slug={post.slug}
+  description={post.description}
+  originalLink={post.originalLink}
+>
+  <Content />
+</BlogLayout>

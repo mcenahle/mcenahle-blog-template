@@ -5,12 +5,13 @@ import { Icon } from "astro-icon/components";
 
 interface Props {
   title: string;
-  date: string;
+  pubDate: string;
+  slug: string;
   description: string;
   originalLink: string;
 }
 
-const { title, date, description, originalLink = "" } = Astro.props;
+const { title, pubDate, slug, description, originalLink = "" } = Astro.props;
 ---
 
 <Navbar />
@@ -27,7 +28,7 @@ const { title, date, description, originalLink = "" } = Astro.props;
           <h2>
             {title}
             <small style="margin-left: 12px;"
-              ><Icon name="mdi:calendar-month-outline" />&nbsp;{date}</small
+              ><Icon name="mdi:calendar-month-outline" />&nbsp;{pubDate}</small
             >
           </h2>
         </div>
