@@ -17,7 +17,27 @@ import { Icon } from "astro-icon/components";
               <span class="caret"></span></button
             >
             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-              <li role="presentation" class="dropdown-header">推荐链接</li>
+              <li role="presentation" class="dropdown-header">链接</li>
+              <li role="presentation">
+                <a
+                  role="menuitem"
+                  tabindex="-1"
+                  href="https://example.com/"
+                  target="_blank">example.com <Icon name="mdi:open-in-new" /></a
+                >
+              </li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation" class="dropdown-header">高校网站</li>
+              <li role="presentation">
+                <a
+                  role="menuitem"
+                  tabindex="-1"
+                  href="https://www.shnu.edu.cn/"
+                  target="_blank"
+                  >上海师范大学 <Icon name="mdi:open-in-new" /></a
+                >
+              </li>
+              <!-- <li role="presentation" class="dropdown-header">推荐链接</li>
               <li role="presentation">
                 <a
                   role="menuitem"
@@ -69,7 +89,7 @@ import { Icon } from "astro-icon/components";
                   href="https://blog.真寻.top/"
                   target="_blank">兔兔博客🇨🇳 <Icon name="mdi:open-in-new" /></a
                 >
-              </li>
+              </li> -->
             </ul>
             <a href="/link/" style="margin-left: 10px;"
               ><u>申请/修改友情链接</u> <Icon name="mdi:arrow-top-right" /></a

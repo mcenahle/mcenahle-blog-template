@@ -38,13 +38,30 @@ const posts = Object.entries(modules)
 
 <Layout title="主页">
   <div class="container">
-    <div class="border-bottom">
-      <h2 class="text-black">梅之夏</h2>
+    <div class="post">
+      <div class="border-bottom">
+        <h2 class="text-black">natsume</h2>
 
-      <p>来自本人的博客文章历程。</p>
+        <p>一个来自 Mcenahle 搭建的 Astro 网站主题。</p>
+
+        <div class="list-group">
+          <a href="/2026/08/26/example-post/" class="list-group-item active">
+            <h4 class="list-group-item-heading">
+              示例博客文章 <Icon name="mdi:arrow-top-right" />
+            </h4>
+            <p class="list-group-item-text">这是一篇示例的博客文章。</p>
+          </a>
+          <a href="/2026/08/27/example-post-2/" class="list-group-item">
+            <h4 class="list-group-item-heading">
+              示例博客文章（2） <Icon name="mdi:arrow-top-right" />
+            </h4>
+            <p class="list-group-item-text">这是另一篇示例的博客文章。</p>
+          </a>
+        </div>
+      </div>
     </div>
 
-    {
+    <!-- {
       posts.length === 0 ? (
         <p class="text-muted">暂时还没有文章。</p>
       ) : (
@@ -68,6 +85,6 @@ const posts = Object.entries(modules)
           ))}
         </div>
       )
-    }
+    } -->
   </div>
 </Layout>

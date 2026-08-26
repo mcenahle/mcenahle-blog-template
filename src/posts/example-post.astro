@@ -1,0 +1,87 @@
+---
+import { Icon } from "astro-icon/components";
+export const title = "示例博客文章";
+export const pubDate = "2026-08-26";
+export const slug = "example-post";
+export const description = "这是一篇示例的博客文章。";
+export const location = [
+  {
+    name: "Place1",
+    date: "2026-08-26",
+    note: "Note1",
+  },
+  {
+    name: "Place2",
+    date: "2026-08-24",
+    note: "Note2",
+  },
+];
+export const originalLink = "https://example.com";
+---
+
+<h4>这是一篇示例博客文章。</h4>
+
+<p>
+  本博客主题使用 <a href="https://astro.build" target="_blank"
+    ><u>Astro</u> <Icon name="mdi:open-in-new" /></a
+  > 框架，并使用 <a href="https://getbootstrap.com/docs/3.3/" target="_blank"
+    ><u>Bootstrap 3.3.7</u> <Icon name="mdi:open-in-new" /></a
+  >。
+</p>
+
+<h4>简介</h4>
+
+<p>
+  这是我自己开发并实际使用的 Astro
+  博客主题，提供文章页面、评论、搜索、文章地点信息等功能。
+</p>
+
+<p>相关特色：</p>
+
+<ul>
+  <li>Astro 静态生成；</li>
+  <li>
+    <a href="https://twikoo.js.org" target="_blank"
+      ><u>Twikoo</u> <Icon name="mdi:open-in-new" /></a
+    > 评论；
+  </li>
+  <li>文章多地点显示；</li>
+  <li>
+    支持 <a href="https://icon-sets.iconify.design/" target="_blank"
+      ><u>Iconify</u> <Icon name="mdi:open-in-new" /></a
+    > 图标，默认支持 <a
+      href="https://icon-sets.iconify.design/mdi/"
+      target="_blank"><u>mdi</u> <Icon name="mdi:open-in-new" /></a
+    > 图标；
+  </li>
+  <li>年/月/日/文章编号 文章路由；</li>
+  <li>
+    <a href="https://pagefind.app" target="_blank"
+      ><u>Pagefind</u> <Icon name="mdi:open-in-new" /></a
+    > 全站搜索；
+  </li>
+  <li>
+    <a href="https://github.com/lxgw/LxgwWenKai" target="_blank"
+      ><u>鸳鸯文楷体</u> <Icon name="mdi:open-in-new" /></a
+    > 使用 <a href="https://chinese-font.netlify.app/zh-cn/" target="_blank"
+      ><u>中文网字计划</u> <Icon name="mdi:open-in-new" /></a
+    > 进行 <a
+      href="https://chinese-font.netlify.app/zh-cn/online-split/"
+      target="_blank"><u>分包</u> <Icon name="mdi:open-in-new" /></a
+    >。
+  </li>
+</ul>
+
+<h4>使用方法</h4>
+<div>
+  <p style="line-height: 14px;"><code>gh repo clone mcenahle/natsume</code></p>
+  <p style="line-height: 14px;"><code>pnpm install</code></p>
+  <p style="line-height: 14px;"><code>pnpm dev</code></p>
+</div>
+
+<h4>相关资源</h4>
+<p>
+  <a href="https://github.com/mcenahle/natsume" target="_blank"
+    ><u>GitHub 源代码</u> <Icon name="mdi:open-in-new" /></a
+  >
+</p>

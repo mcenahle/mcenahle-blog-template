@@ -1,6 +1,5 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import type Index from "../pages/link/index.astro";
 import Layout from "./Layout.astro";
 import { Icon } from "astro-icon/components";
 
@@ -14,7 +13,7 @@ interface Props {
     date: string;
     note: string;
   }[];
-  originalLink: string;
+  originalLink?: string;
 }
 
 const {
@@ -32,7 +31,7 @@ const {
 <Layout title={title} description={description}>
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="/">blog.mcenahle.dev</a></li>
+      <li><a href="/">natsume</a></li>
       <li class="active">{title}</li>
     </ul>
     <div class="post">
@@ -56,7 +55,7 @@ const {
           {
             location && (
               <>
-                <p>
+                <p id="placeShow">
                   <small>
                     <Icon name="mdi:map-marker-radius-outline" />{" "}
                     在撰写本文（或之前），作者去过了：
@@ -121,14 +120,19 @@ const {
           <a class="btn btn-primary" href="/" role="button"
             ><Icon name="mdi:arrow-left" /> 返回</a
           >
-          <a
-            href={originalLink}
-            target="_blank"
-            class="btn btn-default"
-            role="button"
-            style="margin-left: 12px;"
-            >查看原始博客文章 <Icon name="mdi:open-in-new" /></a
-          >
+          {
+            originalLink && (
+              <a
+                href={originalLink}
+                target="_blank"
+                class="btn btn-default"
+                role="button"
+                style="margin-left: 12px;"
+              >
+                查看参考文章 <Icon name="mdi:open-in-new" />
+              </a>
+            )
+          }
         </div>
       </div>
       <div id="tcomment"></div>

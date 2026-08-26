@@ -127,9 +127,13 @@ a:focus {
   margin-top: 0;
 }
 
-.article {
+.article p {
   text-indent: 2em;
   line-height: 2em;
+}
+
+#placeShow {
+  margin-top: 20px;
 }
 
 .tk-icon.__comments {
