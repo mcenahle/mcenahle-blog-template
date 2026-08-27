@@ -110,7 +110,13 @@ import { Icon } from "astro-icon/components";
             style="margin-right: 12px;"
           />
         </p>
-        <p>© 2026 blog.mcenahle.dev. Powered by Astro. Hosted by Vercel.</p>
+        <p>
+          © 2026 <a
+            href="#"
+            data-toggle="modal"
+            data-target="#why-not-js-org-Modal"><u>blog.mcenahle.dev</u></a
+          >. Powered by Astro. Hosted by Vercel.
+        </p>
         <p>
           <Icon name="mdi:place" /> 背景图片拍摄地：东方绿舟（<a
             href="https://ogb.shec.edu.cn"
@@ -136,3 +142,43 @@ import { Icon } from "astro-icon/components";
     </div>
   </div>
 </footer>
+
+<div
+  class="modal fade"
+  id="why-not-js-org-Modal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="why-not-js-org-ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-hidden="true">&times;</button
+        >
+        <h4 class="modal-title" id="why-not-js-org-ModalLabel">
+          Why not js.org?
+        </h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          Thanks to the JS.ORG maintainers, I've learned that my project is not
+          related to JavaScript itself as my project's core purpose.
+        </p>
+        <p>
+          Conversely, natsume.mcenahle.is-a.dev and natsume.is-cool.dev are
+          awaiting their respective approvals.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal"
+          >关闭</button
+        >
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
