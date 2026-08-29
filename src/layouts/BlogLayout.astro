@@ -43,7 +43,120 @@ const {
               ><Icon name="mdi:calendar-month-outline" />&nbsp;{pubDate}</small
             >
           </h2>
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle"
+              type="button"
+              id="ai-read"
+              data-toggle="dropdown"
+              ><Icon name="ri:ai" /> AI 阅读文章
+              <span class="caret"></span></button
+            >
+            <ul class="dropdown-menu" role="menu" aria-labelledby="ai-read">
+              <li role="presentation">
+                <a
+                  role="menuitem"
+                  tabindex="-1"
+                  href="#"
+                  onclick="openInChatgpt()"
+                  ><Icon name="ri:openai-fill" /> 在 ChatGPT 中打开 <Icon
+                    name="mdi:open-in-new"
+                  /></a
+                >
+              </li>
+              <li role="presentation">
+                <a
+                  role="menuitem"
+                  tabindex="-1"
+                  href="https://gemini.google.com"
+                  target="_blank"
+                  ><Icon name="ri:gemini-fill" /> 在 Gemini 中打开 <Icon
+                    name="mdi:open-in-new"
+                  /></a
+                >
+              </li>
+              <li role="presentation" class="disabled">
+                <a
+                  role="menuitem"
+                  tabindex="-1"
+                  href="#"
+                  data-toggle="modal"
+                  data-target="#noclaudeModal"
+                >
+                  <Icon name="ri:claude-fill" /> 在 Claude 中打开 <Icon
+                    name="mdi:open-in-new"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <script is:inline>
+          function openInChatgpt() {
+            const URL = window.location.href;
+            window.open(
+              "https://chatgpt.com/?prompt=阅读 " + URL + " 然后回答这个问题：",
+            );
+          }
+        </script>
+
+        <div
+          class="modal fade"
+          id="noclaudeModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="noclaudeModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-hidden="true"
+                >
+                  &times;
+                </button>
+                <h4 class="modal-title" id="noclaudeModalLabel">
+                  “在 Claude 中打开”不可用。
+                </h4>
+              </div>
+              <div class="modal-body">
+                <p>“在 Claude 中打开”不可用。</p>
+                <p>
+                  Claude Compatibility Layer™
+                  检测到您可能正在呼吸。在继续之前，请完成身份验证（KYC）、年龄验证、地区验证、人格验证以及您确实是您本人验证。
+                </p>
+                <p>
+                  <b style="color:brown"
+                    >注意：本网站实际上不提供、也不需要任何上述验证。这是一个讽刺性提示。请勿向本网站提交身份证件，我们收了也不知道拿它干什么。本网站不会收集上述任何信息，因为我们也不知道为什么让
+                    AI 阅读一篇博客文章需要这些。</b
+                  >
+                </p>
+              </div>
+              <div class="modal-footer">
+                <a
+                  href="https://support.claude.com/zh-CN/articles/14328960-claude-%E4%B8%8A%E7%9A%84%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="btn btn-danger"
+                  role="button"
+                  >了解 Claude 的身份验证规则 <Icon name="mdi:open-in-new" /></a
+                >
+                <button
+                  type="button"
+                  class="btn btn-default"
+                  data-dismiss="modal"
+                  >关闭
+                </button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal -->
+        </div>
+
         <div class="panel-body">
           <div class="alert alert-info">
             <p><Icon name="mdi:information-outline" /> <b>文章阅读引言</b></p>
