@@ -14,12 +14,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.0",
     "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/ri": "^1.2.10",
     "astro": "^7.2.6",
     "astro-icon": "^1.2.0",
     "astro-pagefind": "^2.0.1",
     "pagefind": "^1.5.2",
+    "rehype-external-links": "^3.0.0",
     "sass": "^1.103.1"
   },
   "allowScripts": {
