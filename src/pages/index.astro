@@ -22,7 +22,7 @@ const allPosts = Object.values(
 
         <p>一个来自 Mcenahle 搭建的 Astro 网站主题。</p>
 
-        <ul style="text-indent: 0em;">
+        <div class="list-group">
           {
             allPosts.map((post: any) => {
               const [year, month, day] = post.frontmatter.pubDate.split("-");
@@ -30,16 +30,23 @@ const allPosts = Object.values(
               const url = `/${year}/${month}/${day}/${post.frontmatter.slug}/`;
 
               return (
-                <li>
-                  <a href={url}>
-                    <u>{post.frontmatter.title}</u>{" "}
+                <a href={url} class="list-group-item">
+                  <h4 class="list-group-item-heading">
+                    {post.frontmatter.title}&nbsp;
                     <Icon name="mdi:arrow-top-right" />
-                  </a>
-                </li>
+                  </h4>
+                  <p class="list-group-item-text">
+                    <Icon name="mdi:calendar" />
+                    &nbsp;{post.frontmatter.pubDate}
+                  </p>
+                  <small class="list-group-item-text">
+                    {post.frontmatter.description}
+                  </small>
+                </a>
               );
             })
           }
-        </ul>
+        </div>
       </div>
     </div>
   </div>
