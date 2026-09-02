@@ -1,24 +1,21 @@
 ---
 import BlogLayout from "../../../../layouts/BlogLayout.astro";
 
-const posts = import.meta.glob("../../../../posts/*.astro", {
-  eager: true,
-});
-
 export function getStaticPaths() {
-  const posts = import.meta.glob("../../../../posts/*.astro", {
+  const posts = import.meta.glob("../../../../posts/*.md", {
     eager: true,
   });
 
   return Object.values(posts).map((post: any) => {
-    const [year, month, day] = post.pubDate.split("-");
+    const { frontmatter } = post;
+    const [year, month, day] = frontmatter.pubDate.split("-");
 
     return {
       params: {
         year,
         month,
         day,
-        slug: post.slug,
+        slug: frontmatter.slug,
       },
       props: {
         post,
@@ -30,15 +27,9 @@ export function getStaticPaths() {
 const { post } = Astro.props;
 
 const Content = post.default;
+const { frontmatter } = post;
 ---
 
-<BlogLayout
-  title={post.title}
-  pubDate={post.pubDate}
-  slug={post.slug}
-  description={post.description}
-  location={post.location}
-  originalLink={post.originalLink}
->
+<BlogLayout frontmatter={frontmatter}>
   <Content />
 </BlogLayout>

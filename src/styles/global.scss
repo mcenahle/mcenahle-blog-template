@@ -40,6 +40,16 @@ body::before {
   font-size: 16px;
 }
 
+.article {
+  a {
+    text-decoration: underline;
+  }
+  p {
+    text-indent: 2em;
+    line-height: 2em;
+  }
+}
+
 @media (min-width: 992px) {
   .container {
     width: 970px;
@@ -125,11 +135,6 @@ a:focus {
 
 .page-header {
   margin-top: 0;
-}
-
-.article p {
-  text-indent: 2em;
-  line-height: 2em;
 }
 
 #placeShow {

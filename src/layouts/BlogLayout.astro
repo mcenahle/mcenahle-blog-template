@@ -3,44 +3,44 @@ import Navbar from "../components/Navbar.astro";
 import Layout from "./Layout.astro";
 import { Icon } from "astro-icon/components";
 
-interface Props {
+interface Place {
+  name: string;
+  date?: string;
+  note?: string;
+}
+
+interface Frontmatter {
   title: string;
-  pubDate: string;
-  slug: string;
-  description: string;
-  location?: {
-    name: string;
-    date: string;
-    note: string;
-  }[];
+  description?: string;
+  pubDate?: string | Date;
+  location?: Place[];
   originalLink?: string;
 }
 
-const {
-  title,
-  pubDate,
-  slug,
-  description,
-  location,
-  originalLink = "",
-} = Astro.props;
+interface Props {
+  frontmatter: Frontmatter;
+}
+
+const { frontmatter } = Astro.props;
 ---
 
 <Navbar />
 
-<Layout title={title} description={description}>
+<Layout title={frontmatter.title} description={frontmatter.description}>
   <div class="container">
     <ul class="breadcrumb">
       <li><a href="/">natsume</a></li>
-      <li class="active">{title}</li>
+      <li class="active">{frontmatter.title}</li>
     </ul>
     <div class="post">
       <div class="panel panel-default">
         <div class="page-heading" style="padding:15px">
           <h2>
-            {title}
+            {frontmatter.title}
             <small style="margin-left: 12px;"
-              ><Icon name="mdi:calendar-month-outline" />&nbsp;{pubDate}</small
+              ><Icon name="mdi:calendar-month-outline" />&nbsp;{
+                frontmatter.pubDate
+              }</small
             >
           </h2>
           <div class="dropdown">
@@ -161,20 +161,20 @@ const {
         <div class="panel-body">
           <div class="alert alert-info">
             <p><Icon name="mdi:information-outline" /> <b>文章阅读引言</b></p>
-            <p>{description}</p>
+            <p>{frontmatter.description}</p>
           </div>
           <div class="article">
             <slot />
           </div>
           {
-            location && (
+            frontmatter.location && (
               <>
                 <p id="placeShow">
                   <small>
                     <Icon name="mdi:map-marker-radius-outline" />{" "}
                     在撰写本文（或之前），作者去过了：
                   </small>
-                  {location.map((place, index) => (
+                  {frontmatter.location.map((place, index) => (
                     <button
                       type="button"
                       class="btn btn-info btn-sm"
@@ -185,8 +185,9 @@ const {
                       📍 {place.name}
                     </button>
                   ))}
+                  <span style="margin-left:6px">。</span>
                 </p>
-                {location.map((place, index) => (
+                {frontmatter.location.map((place, index) => (
                   <div
                     class="modal fade"
                     id={`placeModal-${index}`}
@@ -235,9 +236,9 @@ const {
             ><Icon name="mdi:arrow-left" /> 返回</a
           >
           {
-            originalLink && (
+            frontmatter.originalLink && (
               <a
-                href={originalLink}
+                href={frontmatter.originalLink}
                 target="_blank"
                 class="btn btn-default"
                 role="button"
